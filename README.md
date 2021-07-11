@@ -112,7 +112,7 @@ function App() {
 
 export default App;
 
-•
+•After that, click on the HEader.css to start styleing the words.
 
 •
 
