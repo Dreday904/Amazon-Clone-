@@ -241,6 +241,66 @@ export default App;
     align-items: center;
     color: white;
 
+                After the we have to work in the home.js file. 
+                
+                import React from "react";
+import "./Home.css";
+
+function Home() {
+        return <div
+            className="Home">
+            <p> I am the home</p>
+        </div>;
+}
+
+export default Home;
+                
+                Also make sure all of the "Home" objects are capital. yes... you actually have to make sure they are all capital else it will not work. 
+                
+                Next create a file name Home.css then go back into app.js
+                
+                where {*/Home*/} was just delete that and put <Home /> and up top put 
+                
+                import Home from './Home';
+                
+                If done correct, on your webpage you should see whatever you put in <p><p>.
+                
+                Next we need to build a container inside the home component. 
+               
+                Where the <p> was, delete that and put 
+                
+                <div className="Home__container">
+
+                </div>
+                
+                Now, we are going to create a banner to put inside the container. 
+                
+                inside the container, put  <img src="" alt="" />
+                
+                At this time, in the src="", I just used this https://images-na.ssl-images-amazon.com/images/G/01/kindle/journeys/YTUzYjk4NTYt/YTUzYjk4NTYt-ZmNlYWQwMzAt-w1500._CB664441282_.jpg
+                
+                I'm pretty sure it'll be different when someone or myslef views this again as a reference. 
+                
+                Now, of course this image will look expanded and streched. To fix this we add 
+                
+                className="home__image" inside the <img>. Next go into Home.css
+                
+                put .home__image{
+                    width:100%; /* this snaps the image into place*/
+                    z-index: -1; /* z-index put the image behind everything else */
+                    margin-bottom: -150%; /* meaning the elements after**?? will creep into it? */
+                    mask-image:  linear-gradient( to bottom, rgba(0, 0, 0, 1),transparent);
+                 }
+                
+                Inside home.js, you can look on the app and see you have rows with containers. 
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
                 
