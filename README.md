@@ -294,11 +294,68 @@ export default Home;
                 
                 Inside home.js, you can look on the app and see you have rows with containers. 
                 
+                under alt=">, put 
+                    
                 
+                <div className="home__row">
+                    { /* Product */}
+                    { /* Product */}
+                    { /* Product */}
+                 </div>
+
+                <div className="home__row">
+                    { /* Product */}
+                    { /* Product */}            
+                </div>
+
+                <div className="home__row">
+                    { /* Product */}
+                </div>
+
+                <div className="home__row">
+                    { /* Product */}
+                    { /* Product */}
+                </div>
+
+                <div className="home__row">
+                    { /* Product */}
+                </div>
+
+                <div className="home__row">
+                    { /* Product */}
+                    { /* Product */}
+                    { /* Product */}
+                </div>
+                    
+                Now we need to make a new file names product.js, then use the rfce code.
                 
+                import React from 'react';
+                import "./Product.css";
                 
+                function Product() {
+                    return (
+                        <div className='product'>
+
+                        </div>
+
+                        )
+                }
+
+                export default Product
                 
+                Now create a new file named Product.css.
                 
+                So the Product will consist of a title, a price, a star rating, and image, and an add to basket button but updated because the one they used looks pretty outdated.
+                
+                inside the product <div> put 
+                
+                <div className="product">
+            <div className="product__info">
+
+
+            </div>
+
+        </div>
                 
                 
                 
