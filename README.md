@@ -351,16 +351,158 @@ export default Home;
                 
                 <div className="product">
             <div className="product__info">
-
+                <p><p>(this is the product info whatever I put in VS)
 
             </div>
 
         </div>
                 
                 
+                The product__info is the container around all the elements. 
+                under the Product__info put <p className="Product__price">
+                                                    <small>$</small> (puts the $ next to numbers) 
+                                                    <strong>299.99</strong>
+                                            </p>
+                Back in Home.js, under the first {/*Product*/}, change that into a compnent
+                <Product />
                 
+                make sure to import Product from "./Product"; up top. 
                 
+                The price and words should appear after this. Next we will start on the product__rating under the                       
+                <strong>. 
                 
+                The code for Product.js should look like this so far... 
+                    
+import React from 'react';
+import "./Product.css";
+
+function Product() {
+    return (
+        <div className="product">
+            <div className="product__info">
+                <p>Introducing the Xbox Series S, the smallest,
+                sleekest Xbox console ever.
+                Experience the speed and
+                performance of a next-gen
+                all-digital console at an accessible cost.
+                </p>
+                <p className="product__price">
+                    <small>$</small>
+                    <strong>299.99</strong>
+                 </p>
+                <div className="product__rating">
+                    <p>&#11088;</p>
+                    <p>&#11088;</p>
+                    <p>&#11088;</p>
+                    <p>&#11088;</p>
+                </div>
                 
+                  <img src="https://wholesgame.com/wp-content/uploads/Xbox-Series-S-Reveal-Thumb-4-x-5.jpg" 
+                   alt="" 
+                  />
                 
+                <button>Add to basket</button>
                 
+            </div>
+        </div>
+        
+        )
+}
+
+export default Product
+                    
+                    
+                    Now after all that we are going to style all of it because it probably looks very bad. 
+                    
+                    so go into Produc.css, 
+                    
+                    .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px;
+    padding: 20px;
+    width: 100%;
+    max-height: 400px;
+    min-height: 100px;
+    background-color: white;
+    z-index: 1;
+}
+
+.product > img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product > button {
+    background: #f0c14b;
+    border: 1px solid;
+    margin-top: 10px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+}
+
+
+.product__price {
+    margin-top: 5px;
+}
+
+.product__info {
+    height: 100px;
+    margin-bottom: 15px;
+}
+                    
+                    NExt we're going to go to home.js and target the home__container in home.css.
+                    
+                    
+                    .home{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+}
+
+.home__row{
+    display: flex;
+    z-index: 1;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.home__image {
+    width: 100%;
+    z-index: -1;
+    margin-bottom: -150px;
+    mask-image: linear-gradient( to bottom, rgba(0, 0, 0, 1), transparent);
+}
+                    
+                    Now w'ere gunna target the product info a bit more in prodcut.css.. well not really.
+                    
+                    Anyways, now we can starrt adding more <Prodcut /> to make it more populated. 
+
+                    Now we realize that the background of the app is not exactly white which is an issue so we are going to go to index.css, inside the body, we need to change the background color.
+                    
+                    Now we need to pass in different values to each different Product.
+                    
+                    inside Product.js, we can use something called props. 
+                    
+                    
+function Product({ props }) {
+                    
+                    
+                    after that, change it to 
+function Product({ title, image, price, rating }) {
+                    
+                    Now let's go back to home.js and say
+                    
+ <Product title='Xbox Series S' price={299.99}
+                        image="https://wholesgame.com/wp-content/uploads/Xbox-Series-S-Reveal-Thumb-4-x-5.jpg"
+                    />
+                    
+                    
+             
