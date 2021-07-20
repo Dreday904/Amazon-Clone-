@@ -1,17 +1,18 @@
 import React from "react";
 import "./App.css";
 import Header from './Header';
+import Home from './Home';
+
+
 
 function App() {
     return (
         // BEM
-    <div className="App">
-          <h1>Hello Dre, let's build the
-              Amazon store! </h1>
+        <div className="App">
             <Header />
-            {/* Home */}
+            <Home />
     </div>
   );
 }
 
-expor
+export default App;
