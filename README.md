@@ -500,9 +500,27 @@ function Product({ title, image, price, rating }) {
                     
                     Now let's go back to home.js and say
                     
- <Product title='Xbox Series S' price={299.99}
+ <Product title='Xbox Series S writing' price={299.99}
                         image="https://wholesgame.com/wp-content/uploads/Xbox-Series-S-Reveal-Thumb-4-x-5.jpg"
+                        rating={4}
                     />
                     
+                    Now back into Product.js and replace <p>xbox stuff</p> with <p>{title}</p>
+                    <strong>{price}</strong> 
                     
-             
+                    a trick for the start rating is that under product__rating, put..
+                    {Array(rating)
+                    .fill()
+                    .map((_, i) => (
+                    <p>&#11088;</p>
+                    ))}
+             Now in product.css, we are going to target product__rating.. putting display: flex; it aligns them into a row to look more natural. 
+                    
+                    Now inside that img src="", instead of using the link, we can just use {image} 
+                    
+                    Every other image should vanish but the first one. Now at the top, add id inside the 
+                    Product({ id, title, image, price, rating })
+                    
+                    So at this point, it's time to fill in all the <product /> with different items to populate the store and make it looks clean. 
+                    
+                    
